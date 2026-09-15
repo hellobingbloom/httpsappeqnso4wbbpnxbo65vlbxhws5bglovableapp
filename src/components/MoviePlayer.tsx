@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
-import { WifiOff, CloudDownload, Share2, Check, Plus, Download, ChevronDown } from "lucide-react";
+import { WifiOff, CloudDownload, Share2, Check, Plus, Download, ChevronDown, Maximize, Minimize } from "lucide-react";
 import { Link } from "react-router-dom";
 import { toast } from "sonner";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
@@ -156,6 +156,42 @@ const MoviePlayer = ({
     }
   };
 
+  // ---- Full screen ---------------------------------------------------------
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  useEffect(() => {
+    const sync = () => {
+      const fsEl =
+        document.fullscreenElement ||
+        (document as unknown as { webkitFullscreenElement?: Element }).webkitFullscreenElement ||
+        null;
+      setIsFullscreen(!!fsEl);
+    };
+    document.addEventListener("fullscreenchange", sync);
+    document.addEventListener("webkitfullscreenchange", sync);
+    return () => {
+      document.removeEventListener("fullscreenchange", sync);
+      document.removeEventListener("webkitfullscreenchange", sync);
+    };
+  }, []);
+
+  const toggleFullscreen = useCallback(async () => {
+    const el = containerRef.current as
+      | (HTMLDivElement & { webkitRequestFullscreen?: () => Promise<void> })
+      | null;
+    const doc = document as Document & { webkitExitFullscreen?: () => Promise<void> };
+    const active = document.fullscreenElement || (document as unknown as { webkitFullscreenElement?: Element }).webkitFullscreenElement;
+    try {
+      if (active) {
+        await (doc.exitFullscreen?.() ?? doc.webkitExitFullscreen?.());
+      } else if (el) {
+        await (el.requestFullscreen?.() ?? el.webkitRequestFullscreen?.());
+      }
+    } catch {
+      /* device refused fullscreen — ignore */
+    }
+  }, []);
+
   // ---- In-player actions: download, share, watchlist -----------------------
   const listItemId = `${type}-${tmdbId}`;
   const [downloadOpen, setDownloadOpen] = useState(false);
@@ -275,6 +311,9 @@ const MoviePlayer = ({
         <div className="ml-auto flex items-center gap-1.5">
           <PlayerIconButton label="Download" onClick={() => setDownloadOpen(true)}>
             <Download className="h-4 w-4" />
+          </PlayerIconButton>
+          <PlayerIconButton label={isFullscreen ? "Exit full screen" : "Full screen"} onClick={toggleFullscreen}>
+            {isFullscreen ? <Minimize className="h-4 w-4" /> : <Maximize className="h-4 w-4" />}
           </PlayerIconButton>
           <PlayerIconButton label="Share" onClick={shareLink}>
             <Share2 className="h-4 w-4" />
