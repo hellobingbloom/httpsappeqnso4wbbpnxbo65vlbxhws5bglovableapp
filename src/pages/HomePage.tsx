@@ -7,6 +7,7 @@ import CategoryChips from "@/components/CategoryChips";
 import InlineAdRow from "@/components/InlineAdRow";
 import StreamingBrandsRow from "@/components/StreamingBrandsRow";
 import NewMoviesBanner from "@/components/NewMoviesBanner";
+import Banner468Ad from "@/components/Banner468Ad";
 import {
   useTrendingMovies,
   useTrendingTv,
@@ -68,6 +69,10 @@ const HomePage = () => {
           ],
         }}
       />
+
+      <div className="px-3 pt-2 pb-1">
+        <Banner468Ad />
+      </div>
 
       <NewMoviesBanner />
 
