@@ -4,6 +4,8 @@ import { useEffect, useLayoutEffect, useState } from "react";
 import MoviePlayer, { ServerId } from "@/components/MoviePlayer";
 import SEO from "@/components/SEO";
 import InlineAdRow from "@/components/InlineAdRow";
+import Banner468Ad from "@/components/Banner468Ad";
+import NativeAd from "@/components/NativeAd";
 
 
 import TmdbRow from "@/components/TmdbRow";
@@ -61,6 +63,9 @@ const MovieWatchPage = () => {
 
         <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_320px] lg:gap-6 lg:px-4 lg:pt-3">
           <div className="min-w-0">
+            <div className="px-3 pt-2 pb-1.5">
+              <Banner468Ad label={false} />
+            </div>
             <div className="w-full md:max-w-2xl md:mx-auto lg:max-w-[820px] lg:mx-0">
               <MoviePlayer
                 tmdbId={tmdbId || ""}
