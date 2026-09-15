@@ -2,6 +2,7 @@ import AppLayout from "@/components/AppLayout";
 import SEO from "@/components/SEO";
 import TmdbRow from "@/components/TmdbRow";
 import InlineAdRow from "@/components/InlineAdRow";
+import Banner468Ad from "@/components/Banner468Ad";
 import {
   useTrendingMovies,
   usePopularMovies,
@@ -43,7 +44,11 @@ const MoviesPage = () => {
           url: "https://bingbloom.lovable.app/movies",
         }}
       />
-      <div className="px-[4%] pt-6 pb-4">
+      <div className="px-3 pt-2 pb-1">
+        <Banner468Ad />
+      </div>
+
+      <div className="px-[4%] pt-4 pb-4">
         <h1 className="text-2xl md:text-3xl font-bold text-foreground">Movies</h1>
         <p className="text-sm text-muted-foreground mt-1">Discover trending, top-rated and upcoming films</p>
       </div>
