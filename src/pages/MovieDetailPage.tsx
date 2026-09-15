@@ -98,6 +98,9 @@ const MovieDetailPage = () => {
         })}
       />
       <div className="relative">
+        <div className="px-3 pt-2 pb-1">
+          <Banner468Ad />
+        </div>
         <div className="relative w-full h-[55vh] md:h-[70vh]">
           {backdrop && <img src={backdrop} alt={data.title} className="absolute inset-0 w-full h-full object-cover" />}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
