@@ -91,6 +91,11 @@ const MovieWatchPage = () => {
                   </p>
                 </div>
 
+                {/* Sponsored placement between the title and the suggestion cards */}
+                <div className="mt-3">
+                  <NativeAd inline height={120} desktopHeight={260} />
+                </div>
+
                 {/* Mobile/tablet: horizontal suggestions. Desktop shows list in sidebar. */}
                 <section className="mt-4 lg:hidden">
                   <h3 className="text-[12px] font-semibold text-white mb-2">You May Also Like</h3>
