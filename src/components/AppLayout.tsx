@@ -42,8 +42,8 @@ const AppLayout = ({ children, hideNav, hideFooter }: AppLayoutProps) => {
   return (
     <div className="min-h-screen bg-bingbloom-app">
       <TopBar />
-      <div className="pt-12 md:pt-14" />
-      <main className="pb-20 md:pb-0 max-w-[1600px] mx-auto">
+      <div className="pt-12 md:pt-[72px]" />
+      <main className="pb-20 md:pb-0 w-full">
         {/* Non-blocking notices for sections that moved to our other apps.
             The pages stay fully usable. */}
         {isAnime && (
