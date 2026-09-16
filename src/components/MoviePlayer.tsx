@@ -10,15 +10,14 @@ import { trackMediaView } from "@/lib/analytics";
 const SERVER_PREF_KEY = "bb:player:server";
 
 type ServerKey =
-  | "vidlink"
-  | "videasy"
-  | "111movies"
-  | "vidsrc"
-  | "vidsc"
-  | "smashystreams"
-  | "vidrock"
-  | "megaplay"
-  | "vidnest";
+  | "vidbolt"
+  | "nova"
+  | "crimson"
+  | "helix"
+  | "astra"
+  | "ironclad"
+  | "vale"
+  | "lumen";
 
 interface Server {
   id: ServerKey;
@@ -28,76 +27,68 @@ interface Server {
 
 const SERVERS: Server[] = [
   {
-    id: "vidlink",
-    label: "VidLink",
+    id: "vidbolt",
+    label: "VidBolt",
+    url: (type, id, s, e) =>
+      type === "tv"
+        ? `https://vidbolt.xyz/tv/${id}/${s}/${e}?theme=9b5cff`
+        : `https://vidbolt.xyz/movie/${id}?theme=9b5cff`,
+  },
+  {
+    id: "nova",
+    label: "Nova",
+    url: (type, id, s, e) =>
+      type === "tv"
+        ? `https://cinesrc.st/tv/${id}/${s}/${e}`
+        : `https://cinesrc.st/movie/${id}`,
+  },
+  {
+    id: "crimson",
+    label: "Crimson",
+    url: (type, id, s, e) =>
+      type === "tv"
+        ? `https://vidcore.io/tv/${id}/${s}/${e}`
+        : `https://vidcore.io/movie/${id}`,
+  },
+  {
+    id: "helix",
+    label: "Helix",
+    url: (type, id, s, e) =>
+      type === "tv"
+        ? `https://vidnest.fun/tv/${id}/${s}/${e}`
+        : `https://vidnest.fun/movie/${id}`,
+  },
+  {
+    id: "astra",
+    label: "Astra",
     url: (type, id, s, e) =>
       type === "tv"
         ? `https://vidlink.pro/tv/${id}/${s}/${e}`
         : `https://vidlink.pro/movie/${id}`,
   },
   {
-    id: "videasy",
-    label: "Videasy",
+    id: "ironclad",
+    label: "Ironclad",
     url: (type, id, s, e) =>
       type === "tv"
-        ? `https://player.videasy.net/tv/${id}/${s}/${e}`
-        : `https://player.videasy.net/movie/${id}`,
+        ? `https://vidsrcme.ru/tv/${id}/${s}/${e}`
+        : `https://vidsrcme.ru/movie/${id}`,
   },
   {
-    id: "111movies",
-    label: "111Movies",
+    id: "vale",
+    label: "Vale",
     url: (type, id, s, e) =>
       type === "tv"
-        ? `https://111movies.com/tv/${id}/${s}/${e}`
-        : `https://111movies.com/movie/${id}`,
+        ? `https://vidgod.site/tv/${id}/${s}/${e}`
+        : `https://vidgod.site/movie/${id}`,
   },
   {
-    id: "vidsrc",
-    label: "VidSrc",
+    id: "lumen",
+    label: "Lumen",
     url: (type, id, s, e) =>
       type === "tv"
-        ? `https://vidsrc.sbs/embed/tv/${id}/${s}/${e}`
-        : `https://vidsrc.sbs/embed/movie/${id}`,
-  },
-  {
-    id: "vidsc",
-    label: "VidSC",
-    url: (type, id, s, e) =>
-      type === "tv"
-        ? `https://vidsrc.to/embed/tv/${id}/${s}/${e}`
-        : `https://vidsrc.to/embed/movie/${id}`,
-  },
-  {
-    id: "smashystreams",
-    label: "Smashy Streams",
-    url: (type, id, s, e) =>
-      type === "tv"
-        ? `https://embed.smashystream.com/playere.php?tmdb=${id}&season=${s}&episode=${e}`
-        : `https://embed.smashystream.com/playere.php?tmdb=${id}`,
-  },
-  {
-    id: "vidrock",
-    label: "VidRock",
-    url: (type, id, s, e) =>
-      type === "tv"
-        ? `https://vidrock.to/embed/tv/${id}/${s}/${e}`
-        : `https://vidrock.to/embed/movie/${id}`,
-  },
-  {
-    id: "megaplay",
-    label: "MegaPlay",
-    url: (type, id, s, e) =>
-      type === "tv"
-        ? `https://megaplay.to/embed/tv/${id}/${s}/${e}`
-        : `https://megaplay.to/embed/movie/${id}`,
-  },
-  {
-    id: "vidnest",
-    label: "VidNest",
-    url: (type, id, s, e) =>
-      type === "tv"
-        ? `https://vidnest.to/embed/tv/${id}/${s}/${e}`
-        : `https://vidnest.to/embed/movie/${id}`,
+        ? `https://embed.filmu.in/tv/${id}/${s}/${e}`
+        : `https://embed.filmu.in/movie/${id}`,
   },
 ];
 
@@ -141,7 +132,7 @@ const MoviePlayer = ({
     } catch {
       /* ignore */
     }
-    return "vidlink";
+    return "vidbolt";
   });
 
   const active = SERVERS.find((s) => s.id === server) || SERVERS[0];
