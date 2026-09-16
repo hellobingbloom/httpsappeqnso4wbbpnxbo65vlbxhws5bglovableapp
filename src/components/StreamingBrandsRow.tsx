@@ -11,12 +11,12 @@ import imax from "@/assets/brands/imax.png.asset.json";
  * studios (DreamWorks, IMAX) have no provider so they filter by company id.
  */
 const BRANDS = [
-  { slug: "netflix",    label: "Netflix",     img: netflix.url,    bg: "#0b0b0b", providerId: 8,   companyId: 0 },
-  { slug: "prime",      label: "Prime Video", img: prime.url,      bg: "#000814", providerId: 9,   companyId: 0 },
-  { slug: "tubi",       label: "Tubi",        img: tubi.url,       bg: "#5b21b6", providerId: 73,  companyId: 0 },
-  { slug: "disney",     label: "Disney+",     img: disney.url,     bg: "#02264a", providerId: 337, companyId: 0 },
-  { slug: "dreamworks", label: "DreamWorks",  img: dreamworks.url, bg: "#0b1e3b", providerId: 0,   companyId: 521 },
-  { slug: "imax",       label: "IMAX",        img: imax.url,       bg: "#000000", providerId: 0,   companyId: 41077 },
+  { slug: "netflix",    label: "Netflix",     img: netflix.url, providerId: 8,   companyId: 0 },
+  { slug: "prime",      label: "Prime Video", img: prime.url, providerId: 9,   companyId: 0 },
+  { slug: "tubi",       label: "Tubi",        img: tubi.url, providerId: 73,  companyId: 0 },
+  { slug: "disney",     label: "Disney+",     img: disney.url, providerId: 337, companyId: 0 },
+  { slug: "dreamworks", label: "DreamWorks",  img: dreamworks.url, providerId: 0,   companyId: 521 },
+  { slug: "imax",       label: "IMAX",        img: imax.url, providerId: 0,   companyId: 41077 },
 ];
 
 /**
@@ -24,18 +24,17 @@ const BRANDS = [
  * filtered to that service's catalogue.
  */
 const StreamingBrandsRow = () => (
-  <section className="px-4 md:px-6 py-3">
-    <div className="flex items-baseline justify-between mb-2">
-      <h2 className="text-white text-sm font-bold tracking-tight">Streaming Universe</h2>
-      <span className="text-[10px] text-white/45">Browse by service</span>
+  <section className="px-4 md:px-10 lg:px-14 py-4 md:py-6">
+    <div className="flex items-baseline justify-between mb-3">
+      <h2 className="font-display text-2xl md:text-3xl text-foreground">Channels & Apps</h2>
+      <span className="text-[10px] uppercase text-muted-foreground">Browse by service</span>
     </div>
     <div className="flex gap-2.5 overflow-x-auto scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
       {BRANDS.map((b) => (
         <Link
           key={b.slug}
           to={`/search?provider=${b.slug}`}
-          className="group flex-shrink-0 w-[128px] h-[72px] rounded-xl overflow-hidden border border-white/10 grid place-items-center transition-transform hover:scale-[1.04]"
-          style={{ background: b.bg }}
+          className="group grid h-[72px] w-[128px] flex-shrink-0 place-items-center overflow-hidden rounded-sm border border-border bg-card transition hover:-translate-y-0.5 hover:border-primary md:h-[92px] md:w-[172px]"
           aria-label={`${b.label} titles`}
         >
           <img
