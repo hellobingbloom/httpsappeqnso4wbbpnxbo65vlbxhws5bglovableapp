@@ -132,7 +132,7 @@ const MoviePlayer = ({
     } catch {
       /* ignore */
     }
-    return "vidlink";
+    return "vidbolt";
   });
 
   const active = SERVERS.find((s) => s.id === server) || SERVERS[0];
