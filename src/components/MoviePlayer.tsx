@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { toggleMyList, isInMyList } from "@/hooks/useMyList";
 import DownloadSourceSheet from "@/components/DownloadSourceSheet";
-import NativeAd from "@/components/NativeAd";
+import InlineAdRow from "@/components/InlineAdRow";
 import { trackMediaView } from "@/lib/analytics";
 
 const SERVER_PREF_KEY = "bb:player:server";
@@ -325,7 +325,9 @@ const MoviePlayer = ({
         </div>
       </div>
 
-      <NativeAd inline compact height={92} desktopHeight={110} className="border-t border-border/60" />
+      <div className="border-t border-border/60">
+        <InlineAdRow count={4} />
+      </div>
 
       <DownloadSourceSheet
         open={downloadOpen}

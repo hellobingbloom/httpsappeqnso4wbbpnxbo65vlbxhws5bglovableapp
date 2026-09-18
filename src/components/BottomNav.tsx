@@ -1,9 +1,18 @@
-import { Home, Film, Grid2X2, Drama, Library } from "lucide-react";
+import { Home, Film, Drama, Library } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+
+const FourTiles = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect x="2.5" y="2.5" width="7" height="7" rx="1" fill="currentColor" />
+    <rect x="14.5" y="2.5" width="7" height="7" rx="1" fill="currentColor" />
+    <rect x="2.5" y="14.5" width="7" height="7" rx="1" fill="currentColor" />
+    <rect x="14.5" y="14.5" width="7" height="7" rx="1" fill="currentColor" />
+  </svg>
+);
 
 const tabs = [
   { to: "/home", icon: Home, label: "Home", match: (p: string) => p === "/" || p === "/home" },
-  { to: "/search", icon: Grid2X2, label: "Explore", match: (p: string) => p.startsWith("/search") },
+  { to: "/search", icon: FourTiles, label: "Explore", match: (p: string) => p.startsWith("/search") },
   { to: "/movies", icon: Film, label: "Movies", match: (p: string) => p.startsWith("/movies") || p.startsWith("/tv") },
   { to: "/anime", icon: Drama, label: "Anime", match: (p: string) => p.startsWith("/anime") },
   { to: "/library", icon: Library, label: "Library", match: (p: string) => p.startsWith("/library") || p.startsWith("/my-downloads") || p.startsWith("/download") },
