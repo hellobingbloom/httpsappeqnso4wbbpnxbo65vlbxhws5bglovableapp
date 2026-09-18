@@ -5,6 +5,7 @@ import { toast } from "sonner";
 import { useOnlineStatus } from "@/hooks/useOnlineStatus";
 import { toggleMyList, isInMyList } from "@/hooks/useMyList";
 import DownloadSourceSheet from "@/components/DownloadSourceSheet";
+import NativeAd from "@/components/NativeAd";
 import { trackMediaView } from "@/lib/analytics";
 
 const SERVER_PREF_KEY = "bb:player:server";
@@ -177,6 +178,12 @@ const MoviePlayer = ({
         await (doc.exitFullscreen?.() ?? doc.webkitExitFullscreen?.());
       } else if (el) {
         await (el.requestFullscreen?.() ?? el.webkitRequestFullscreen?.());
+        if (window.matchMedia("(max-width: 767px)").matches) {
+          const orientation = screen.orientation as ScreenOrientation & {
+            lock?: (orientation: "landscape") => Promise<void>;
+          };
+          await orientation.lock?.("landscape").catch(() => undefined);
+        }
       }
     } catch {
       /* device refused fullscreen — ignore */
@@ -317,6 +324,8 @@ const MoviePlayer = ({
           </PlayerIconButton>
         </div>
       </div>
+
+      <NativeAd inline compact height={92} desktopHeight={110} className="border-t border-border/60" />
 
       <DownloadSourceSheet
         open={downloadOpen}

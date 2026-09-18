@@ -4,6 +4,7 @@ import { Search, ArrowLeft, Loader2, Flame, Star, Play } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import AppLayout from "@/components/AppLayout";
 import SEO from "@/components/SEO";
+import Banner468Ad from "@/components/Banner468Ad";
 
 import InlineAdRow from "@/components/InlineAdRow";
 import { BRAND_PROVIDER_MAP } from "@/components/StreamingBrandsRow";
@@ -329,6 +330,7 @@ const SearchPage = () => {
         description={searchQuery ? `Search results for "${searchQuery}" on BingBloom.` : "Explore movies, TV series, anime and animation on BingBloom."}
       />
       <div className="px-5 pt-4" style={{ background: "#000" }}>
+        <Banner468Ad className="mb-3" />
         {/* Search bar */}
         <div ref={wrapRef} className="relative flex items-center gap-2 mb-4">
           <button onClick={() => navigate(-1)} className="p-1.5 rounded-lg hover:bg-white/5">
