@@ -9,3 +9,5 @@
 - [x] Complete Google Analytics initialization and SPA page-view delivery.
 - [x] Add the 468x60 banner to TV and anime detail routes.
 - [x] Place four compact inline native ads above TV episode cards.
+- [x] Remove the native ad row beneath TV and anime titles.
+- [x] Restore the previous vivid red app accent theme.
