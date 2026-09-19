@@ -5,7 +5,6 @@ import MoviePlayer, { ServerId } from "@/components/MoviePlayer";
 import SEO from "@/components/SEO";
 import InlineAdRow from "@/components/InlineAdRow";
 import Banner468Ad from "@/components/Banner468Ad";
-import NativeAd from "@/components/NativeAd";
 
 
 import TmdbRow from "@/components/TmdbRow";
@@ -89,11 +88,6 @@ const MovieWatchPage = () => {
                   <p className="text-[10.5px] text-white/55 mt-0.5">
                     {year}{data.runtime ? ` · ${data.runtime} min` : ""}
                   </p>
-                </div>
-
-                {/* Sponsored placement between the title and the suggestion cards */}
-                <div className="mt-3">
-                  <NativeAd inline height={120} desktopHeight={260} />
                 </div>
 
                 {/* Mobile/tablet: horizontal suggestions. Desktop shows list in sidebar. */}

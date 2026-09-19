@@ -8,6 +8,7 @@ import DownloadButton from "@/components/DownloadButton";
 import { useTvDetail, useTvSeason, useTvSimilar, useTvRecommendations, useTrendingTv, usePopularTv, useTopRatedTv } from "@/hooks/useTmdb";
 import { img } from "@/lib/tmdb";
 import InlineAdRow from "@/components/InlineAdRow";
+import Banner468Ad from "@/components/Banner468Ad";
 
 const TVDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -86,6 +87,9 @@ const TVDetailPage = () => {
           genre: (data.genres || []).map((g: any) => g.name),
         }}
       />
+      <div className="px-[5%] pt-3 pb-1">
+        <Banner468Ad label={false} />
+      </div>
       <div className="relative">
         <div className="relative w-full h-[55vh] md:h-[70vh]">
           {backdrop && <img src={backdrop} alt={data.name} className="absolute inset-0 w-full h-full object-cover" />}
@@ -145,6 +149,12 @@ const TVDetailPage = () => {
               </div>
             </div>
           </div>
+
+          {seasons.length > 0 && (
+            <div className="mt-8 -mx-[5%]">
+              <InlineAdRow count={4} />
+            </div>
+          )}
 
           {/* Season selector + episode grid */}
           {seasons.length > 0 && (
@@ -223,10 +233,6 @@ const TVDetailPage = () => {
               </div>
             </section>
           )}
-
-          <div className="mt-8 -mx-[5%]">
-            <InlineAdRow count={4} />
-          </div>
 
           {cast.length > 0 && (
             <section className="mt-10">
