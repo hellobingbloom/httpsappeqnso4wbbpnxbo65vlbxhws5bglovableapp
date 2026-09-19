@@ -8,7 +8,7 @@
 :root {
   --bg-pure: #0d0c0d;
   --bg-card: #181517;
-  --accent: #b76e79;
+  --accent: #e50914;
   --text-main: #f2edef;
   --text-muted: #a69da1;
 }
@@ -21,42 +21,42 @@
     --card-foreground: 340 12% 91%;
     --popover: 336 7% 9%;
     --popover-foreground: 340 16% 94%;
-    --primary: 350 32% 58%;
-    --primary-foreground: 345 18% 97%;
+    --primary: 357 92% 47%;
+    --primary-foreground: 0 0% 100%;
     --secondary: 336 7% 13%;
     --secondary-foreground: 340 12% 91%;
     --muted: 336 6% 15%;
     --muted-foreground: 340 5% 63%;
-    --accent: 350 32% 58%;
-    --accent-foreground: 345 18% 97%;
+    --accent: 357 92% 47%;
+    --accent-foreground: 0 0% 100%;
     --destructive: 356 55% 50%;
     --destructive-foreground: 345 18% 97%;
     --border: 336 7% 19%;
     --input: 336 7% 15%;
-    --ring: 350 32% 58%;
+    --ring: 357 92% 47%;
     --radius: 0.5rem;
 
     --surface: 330 4% 5%;
     --surface-2: 336 7% 12%;
 
-    /* Legacy bb tokens — all aliased to red for backwards compat */
-    --bb-purple: 350 32% 58%;
+    /* Legacy bb tokens — all aliased to BingBloom red for backwards compat */
+    --bb-purple: 357 92% 47%;
     --bb-cyan: 189 18% 62%;
-    --bb-pink: 350 32% 58%;
+    --bb-pink: 357 92% 47%;
     --bb-gold: 37 25% 70%;
     --bb-indigo: 231 14% 58%;
     --bb-emerald: 160 14% 49%;
-    --bb-rose: 350 32% 58%;
+    --bb-rose: 357 92% 47%;
     --bb-amber: 37 25% 70%;
 
     --sidebar-background: 330 4% 6%;
     --sidebar-foreground: 340 16% 94%;
-    --sidebar-primary: 350 32% 58%;
-    --sidebar-primary-foreground: 345 18% 97%;
+    --sidebar-primary: 357 92% 47%;
+    --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 336 7% 13%;
     --sidebar-accent-foreground: 340 12% 91%;
     --sidebar-border: 336 7% 19%;
-    --sidebar-ring: 350 32% 58%;
+    --sidebar-ring: 357 92% 47%;
   }
 
   .light {
