@@ -54,9 +54,9 @@ const TmdbCard = ({ item, type, width, fill, rank }: TmdbCardProps) => {
           </div>
         )}
       </div>
-      <div className="mt-2">
-        <p className="text-[11px] md:text-[13px] font-medium text-foreground line-clamp-1 group-hover:text-primary">{item.title}</p>
-        {year && <p className="mt-0.5 text-[9px] md:text-[10px] uppercase text-muted-foreground">{year} · {mediaType === "tv" ? "Series" : "Film"}</p>}
+      <div className="mt-1.5">
+        <p className="text-[10px] md:text-[13px] font-medium text-foreground line-clamp-1 group-hover:text-primary">{item.title}</p>
+        {year && <p className="mt-0.5 text-[8px] md:text-[10px] uppercase text-muted-foreground">{year} · {mediaType === "tv" ? "Series" : "Film"}</p>}
       </div>
     </Link>
   );
