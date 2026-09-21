@@ -5,7 +5,6 @@ import MoviePlayer, { ServerId } from "@/components/MoviePlayer";
 import SEO from "@/components/SEO";
 import InlineAdRow from "@/components/InlineAdRow";
 import Banner468Ad from "@/components/Banner468Ad";
-import NativeAd from "@/components/NativeAd";
 
 import TmdbRow from "@/components/TmdbRow";
 import Footer from "@/components/Footer";
@@ -117,11 +116,6 @@ const TvWatchPage = () => {
                       <ChevronDown className="w-3 h-3 text-white/70 absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none" />
                     </div>
                   )}
-                </div>
-
-                {/* Sponsored placement between the title and the episode cards */}
-                <div className="mt-3">
-                  <NativeAd inline height={120} desktopHeight={260} />
                 </div>
 
                 {/* Mobile/tablet: horizontal episode strip. Desktop uses sidebar list. */}

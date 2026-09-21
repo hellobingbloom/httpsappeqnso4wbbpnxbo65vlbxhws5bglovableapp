@@ -36,7 +36,6 @@ const AppLayout = ({ children, hideNav, hideFooter }: AppLayoutProps) => {
   const FOOTER_ROUTES = ["/", "/home", "/settings"];
   const showFooter = !hideFooter && FOOTER_ROUTES.includes(pathname);
 
-  const isAnime = pathname.startsWith("/anime");
   const isLiveTv = pathname.startsWith("/live-tv");
 
   return (
@@ -46,15 +45,6 @@ const AppLayout = ({ children, hideNav, hideFooter }: AppLayoutProps) => {
       <main className="pb-20 md:pb-0 w-full">
         {/* Non-blocking notices for sections that moved to our other apps.
             The pages stay fully usable. */}
-        {isAnime && (
-          <ExternalSiteNotice
-            storageKey="anime"
-            title="Anime has a new home: NowAnime"
-            description="We launched a dedicated anime site with a bigger library, faster streams and subs/dubs."
-            url="https://nowanime.lovable.app"
-            ctaLabel="Open NowAnime"
-          />
-        )}
         {isLiveTv && (
           <ExternalSiteNotice
             storageKey="live-tv"
