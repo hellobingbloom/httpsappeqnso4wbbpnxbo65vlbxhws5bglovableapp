@@ -128,6 +128,15 @@ const TopBar = () => {
               <Download className="h-3 w-3" /> Download App
             </a>
             <a
+              href="https://whatsapp.com/channel/0029VbD2CdHEwEjtJ5Utbo2n"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden grid place-items-center h-7 w-7 rounded-sm bg-[#25D366]/15 text-[#25D366]"
+              aria-label="Join BingBloom on WhatsApp"
+            >
+              <WhatsAppIcon className="h-3.5 w-3.5" />
+            </a>
+            <a
               href="https://bingbloomdownload.lovable.app"
               target="_blank"
               rel="noopener noreferrer"
@@ -135,6 +144,15 @@ const TopBar = () => {
               aria-label="Download BingBloom app on desktop"
             >
               <Download className="h-3.5 w-3.5" /> Download App
+            </a>
+            <a
+              href="https://whatsapp.com/channel/0029VbD2CdHEwEjtJ5Utbo2n"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:grid place-items-center h-8 w-8 rounded-sm bg-[#25D366]/15 text-[#25D366] hover:bg-[#25D366]/25"
+              aria-label="Join BingBloom on WhatsApp"
+            >
+              <WhatsAppIcon className="h-4 w-4" />
             </a>
             <Link
               to="/search"
