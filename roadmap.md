@@ -11,3 +11,6 @@
 - [x] Place four compact inline native ads above TV episode cards.
 - [x] Remove the native ad row beneath TV and anime titles.
 - [x] Restore the previous vivid red app accent theme.
+- [x] Remove the title-to-episodes ad from the TV/anime watch page.
+- [x] Place four compact ads above episodes on TV/anime details.
+- [x] Remove the NowAnime prompt and all top-of-page anime ads.

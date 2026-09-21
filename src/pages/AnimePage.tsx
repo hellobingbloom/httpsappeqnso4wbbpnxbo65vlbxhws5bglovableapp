@@ -4,8 +4,6 @@ import AppLayout from "@/components/AppLayout";
 import SEO from "@/components/SEO";
 import TmdbRow from "@/components/TmdbRow";
 import InlineAdRow from "@/components/InlineAdRow";
-import Banner468Ad from "@/components/Banner468Ad";
-import AnimeMovedDialog from "@/components/AnimeMovedDialog";
 import { fetchList, type TmdbItem } from "@/lib/tmdb";
 
 // 25 anime category rows powered by TMDB discover (genre 16 + Japanese origin + keywords).
@@ -76,18 +74,10 @@ const AnimePage = () => {
         title="Anime – BingBloom"
         description="25 anime collections — trending, top-rated, isekai, mecha, romance, slice of life, sports and more. Stream anime free."
       />
-      <AnimeMovedDialog />
-
-      <div className="px-3 pt-2 pb-1">
-        <Banner468Ad />
-      </div>
-
       <div className="px-[4%] pt-4 pb-2">
         <h1 className="text-2xl md:text-3xl font-bold text-foreground">Anime</h1>
         <p className="text-sm text-muted-foreground mt-1">25 hand-picked collections</p>
       </div>
-
-      <InlineAdRow count={4} />
 
       {/* Sticky category menu */}
       <div className="sticky top-12 md:top-14 z-30 bg-background/95 backdrop-blur border-b border-border">

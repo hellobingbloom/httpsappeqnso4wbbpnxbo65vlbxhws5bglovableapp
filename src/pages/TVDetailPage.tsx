@@ -8,6 +8,7 @@ import DownloadButton from "@/components/DownloadButton";
 import { useTvDetail, useTvSeason, useTvSimilar, useTvRecommendations, useTrendingTv, usePopularTv, useTopRatedTv } from "@/hooks/useTmdb";
 import { img } from "@/lib/tmdb";
 import Banner468Ad from "@/components/Banner468Ad";
+import InlineAdRow from "@/components/InlineAdRow";
 
 const TVDetailPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -152,6 +153,9 @@ const TVDetailPage = () => {
           {/* Season selector + episode grid */}
           {seasons.length > 0 && (
             <section className="mt-10">
+              <div className="-mx-[5%] mb-4">
+                <InlineAdRow count={4} />
+              </div>
               <div className="flex items-center justify-between gap-3 mb-4">
                 <h2 className="text-sm md:text-base font-semibold text-foreground">New episode card</h2>
                 <select
