@@ -142,7 +142,7 @@ const MovieDetailPage = () => {
 
               {/* Sponsored placement directly above the Watch Now buttons */}
               <div className="mb-4 max-w-3xl">
-                <NativeAd inline height={120} desktopHeight={260} />
+                <NativeAd inline height={120} desktopHeight={300} />
               </div>
 
               <div className="flex flex-wrap gap-3">
