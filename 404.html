@@ -6,10 +6,10 @@
     <title>Redirecting…</title>
     <script>
       (() => {
-        const repo = '/just-an-app-/';
-        const current = window.location.href;
-        sessionStorage.setItem('redirect', current);
-        window.location.replace(repo);
+        const url = new URL(window.location.href);
+        const path = url.pathname + url.search + url.hash;
+        sessionStorage.setItem('redirect', path === '/' ? '/' : path);
+        window.location.replace('/');
       })();
     </script>
   </head>
