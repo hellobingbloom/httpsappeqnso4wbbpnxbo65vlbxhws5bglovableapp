@@ -6,7 +6,7 @@ import { VitePWA } from "vite-plugin-pwa";
 
 export default defineConfig(({ mode }) => {
   const isProd = mode === "production";
-  const repoBase = isProd ? "/just-an-app-/" : "/";
+  const repoBase = isProd ? "/" : "/";
 
   return {
     base: repoBase,
