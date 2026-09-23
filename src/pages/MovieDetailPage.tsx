@@ -12,7 +12,7 @@ import { img } from "@/lib/tmdb";
 import DownloadButton from "@/components/DownloadButton";
 import InlineAdRow from "@/components/InlineAdRow";
 import Banner468Ad from "@/components/Banner468Ad";
-import NativeAd from "@/components/NativeAd";
+import AdsterraIframeAd from "@/components/AdsterraIframeAd";
 import { movieSchema } from "@/lib/seoSchemas";
 
 const MovieDetailPage = () => {
@@ -140,9 +140,9 @@ const MovieDetailPage = () => {
               </div>
               <p className="text-xs md:text-sm text-foreground/80 leading-relaxed mb-5 max-w-3xl">{data.overview}</p>
 
-              {/* Sponsored placement directly above the Watch Now buttons */}
+              {/* Adsterra render-safe slot: visible, fixed-size 300x250 iframe that counts as an impression. */}
               <div className="mb-4 max-w-3xl">
-                <NativeAd inline height={120} desktopHeight={300} />
+                <AdsterraIframeAd desktopOnly className="md:mx-auto" />
               </div>
 
               <div className="flex flex-wrap gap-3">
