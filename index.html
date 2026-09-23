@@ -6,11 +6,11 @@
     <meta name="theme-color" content="#0A0A0A" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="/icon-512.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="icon" type="image/png" href="/just-an-app-/favicon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/just-an-app-/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/just-an-app-/icon-512.png" />
+    <link rel="apple-touch-icon" href="/just-an-app-/apple-touch-icon.png" />
+    <link rel="manifest" href="/just-an-app-/manifest.json" />
     <title>BingBloom — Discover , Stream , Bloom</title>
     <meta name="description" content="BingBloom is a free, ad-supported streaming service offering movies, series, live channels, and music. Discover. Stream. Bloom. Visit bingbloom.lovable.app">
     <meta name="author" content="BingBloom" />
@@ -22,6 +22,33 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://bingbloom.lovable.app/" />
     <meta name="twitter:image" content="https://storage.googleapis.com/gpt-engineer-file-uploads/o4DUK7MkXjVftDFhnTvCN9jKJkA3/social-images/social-1781381007115-bing_logo.webp">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQVV8S4JTF"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-QQVV8S4JTF');
+    </script>
+
+    <script>
+      (function () {
+        try {
+          var redirect = sessionStorage.getItem('redirect');
+          if (redirect) {
+            var repo = '/just-an-app-/';
+            var url = redirect.replace(/^https?:\/\/[^/]+/, '');
+            if (url && url !== repo && url.indexOf(repo) === 0) {
+              history.replaceState(null, '', url);
+            }
+            sessionStorage.removeItem('redirect');
+          }
+        } catch (e) {
+          // Ignore storage errors in private mode or restricted browsers.
+        }
+      })();
+    </script>
 
     <script type="application/ld+json">
       {
@@ -111,7 +138,9 @@
   <meta name="twitter:title" content="BingBloom — Discover , Stream , Bloom">
   <meta property="og:description" content="BingBloom is a free, ad-supported streaming service offering movies, series, live channels, and music. Discover. Stream. Bloom. Visit bingbloom.lovable.app">
   <meta name="twitter:description" content="BingBloom is a free, ad-supported streaming service offering movies, series, live channels, and music. Discover. Stream. Bloom. Visit bingbloom.lovable.app">
-</head>
+  <script type="module" crossorigin src="/just-an-app-/assets/index-DNgzU5Bf.js"></script>
+  <link rel="stylesheet" crossorigin href="/just-an-app-/assets/index-Dg0AzEgL.css">
+<link rel="manifest" href="/just-an-app-/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/just-an-app-/registerSW.js"></script></head>
   <body>
     <div id="root"></div>
     <script>
@@ -141,6 +170,5 @@
         } catch (_) { /* noop */ }
       })();
     </script>
-    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

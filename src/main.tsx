@@ -5,27 +5,18 @@ import "@fontsource-variable/work-sans";
 import App from "./App.tsx";
 import "./index.css";
 
-// Google Analytics (GA4) — initialized once at app startup. The SPA's
-// RouteAnalytics component reports subsequent route changes as page_view
-// events via the shared analytics module (src/lib/analytics.ts).
-const GA_MEASUREMENT_ID =
-  import.meta.env.VITE_GOOGLE_ANALYTICS_MEASUREMENT_ID || "G-VG4FTSTQ19";
-if (typeof document !== "undefined" && !document.querySelector(`script[data-bingbloom-ga="${GA_MEASUREMENT_ID}"]`)) {
-  const script = document.createElement("script");
-  script.async = true;
-  script.dataset.bingbloomGa = GA_MEASUREMENT_ID;
-  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-  document.head.appendChild(script);
+// Google tag manager / analytics bootstrap for the site. The actual script tag
+// is loaded in index.html so it is present before the app starts and works on
+// static GitHub Pages hosting.
+if (typeof window !== "undefined") {
   window.dataLayer = window.dataLayer || [];
-  function gtag(...args: unknown[]) {
-    window.dataLayer?.push(args);
+  if (!window.gtag) {
+    window.gtag = function gtag(...args: unknown[]) {
+      window.dataLayer?.push(args);
+    };
   }
-  window.gtag = gtag;
-  gtag("js", new Date());
-  gtag("config", GA_MEASUREMENT_ID, {
-    send_page_view: false,
-    transport_type: "beacon",
-  });
+  window.gtag("js", new Date());
+  window.gtag("config", "G-QQVV8S4JTF");
 }
 
 // Apply persisted theme before render to avoid flash
